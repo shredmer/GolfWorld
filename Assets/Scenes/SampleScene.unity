@@ -825,12 +825,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 822277115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 257bef7e24639b74191f4b951c95904e, type: 3}
+  m_Script: {fileID: 11500000, guid: a8cb8d28c2e1aee45a024d0ae3ce1fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ballRigidbody: {fileID: 822277120}
   swingDirectionReference: {fileID: 668913039}
-  cameraControllersToDisable: []
+  cameraControllersToDisable:
+  - {fileID: 668913038}
+  playerInput: {fileID: 0}
+  cameraActionMapsToDisable: []
+  cameraActionsToDisable:
+  - Look
   centerDeadZone: 0.15
   fullDeflectionThreshold: 0.95
   followThroughStartBuffer: 0.1
@@ -844,6 +849,7 @@ MonoBehaviour:
   stationaryTimeRequired: 0.5
   showDebugInfo: 1
   debugLabelPosition: {x: 10, y: 10}
+  debugFontSize: 24
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
