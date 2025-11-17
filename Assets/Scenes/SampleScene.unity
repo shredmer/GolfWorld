@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 668913039}
   - component: {fileID: 668913038}
   - component: {fileID: 668913037}
-  - component: {fileID: 668913036}
+  - component: {fileID: 668913041}
   - component: {fileID: 668913040}
   - component: {fileID: 668913035}
   m_Layer: 0
@@ -506,7 +506,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         InputAction: {fileID: 870172441254456677, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-        Gain: -10
+        Gain: -1
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -514,19 +514,6 @@ MonoBehaviour:
         DecelTime: 0
   PlayerIndex: -1
   AutoEnableInputs: 1
---- !u!114 &668913036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668913034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LookAtOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &668913037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7de3aefa901374ba29464584a3109a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraRadius: 0.4
+  CameraRadius: 1
   Decollision:
     Enabled: 1
     ObstacleLayers:
@@ -678,6 +665,19 @@ MonoBehaviour:
       m_Bits: 1
     MaximumRaycast: 10
     Damping: 10
+--- !u!114 &668913041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668913034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookAtOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &822277115
 GameObject:
   m_ObjectHideFlags: 0
