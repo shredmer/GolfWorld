@@ -85,6 +85,14 @@ public class RightThumbstickAction : MonoBehaviour
 
     private Vector2 mouseSwingValue;
 
+    private void Awake()
+    {
+        if (swingDirectionReference == null)
+        {
+            swingDirectionReference = transform;
+        }
+    }
+
     private void Update()
     {
         HandleStateTransitions();
