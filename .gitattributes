@@ -1,0 +1,25 @@
+# Normalize all text files to LF in the repo, but convert to CRLF locally on Windows
+* text=auto
+
+# Force common Unity text files to always use LF
+*.cs      text eol=lf
+*.shader  text eol=lf
+*.cginc   text eol=lf
+*.hlsl    text eol=lf
+*.compute text eol=lf
+*.json    text eol=lf
+*.yaml    text eol=lf
+*.yml     text eol=lf
+*.meta    text eol=lf
+*.txt     text eol=lf
+*.md      text eol=lf
+
+# Treat these as binary (don’t touch line endings)
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.psd     binary
+*.wav     binary
+*.fbx     binary
+*.unity   binary
+*.prefab  binary
