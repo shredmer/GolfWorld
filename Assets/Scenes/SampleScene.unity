@@ -691,6 +691,7 @@ GameObject:
   - component: {fileID: 822277117}
   - component: {fileID: 822277116}
   - component: {fileID: 822277120}
+  - component: {fileID: 822277121}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -815,6 +816,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &822277121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822277115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257bef7e24639b74191f4b951c95904e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballRigidbody: {fileID: 822277120}
+  swingDirectionReference: {fileID: 668913039}
+  cameraControllersToDisable: []
+  centerDeadZone: 0.15
+  fullDeflectionThreshold: 0.95
+  followThroughStartBuffer: 0.1
+  followThroughCancelTime: 0.2
+  mouseBackswingDistance: 0.75
+  mouseFollowThroughDistance: 0.75
+  mouseSwingSensitivity: 0.005
+  swingForce: 10
+  maxHoldTimeForFullPower: 2
+  stationaryVelocityThreshold: 0.05
+  stationaryTimeRequired: 0.5
+  showDebugInfo: 1
+  debugLabelPosition: {x: 10, y: 10}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
