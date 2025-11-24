@@ -57,6 +57,22 @@ public class GolfSwingStateMachine : MonoBehaviour
     [Tooltip("Seconds the ball must remain below the rest threshold before swings are re-enabled.")]
     public float stationaryTimeRequired = 0.5f;
 
+    [Header("Power bar UI")]
+    [Tooltip("Whether to show the power bar while holding at the bottom of the swing.")]
+    public bool showPowerBar = true;
+
+    [Tooltip("Maximum width of the power bar when at full power.")]
+    public float powerBarMaxWidth = 200f;
+
+    [Tooltip("Height of the power bar.")]
+    public float powerBarHeight = 12f;
+
+    [Tooltip("Vertical offset in screen space from the ball position to place the power bar.")]
+    public float powerBarVerticalOffset = 30f;
+
+    [Tooltip("Color used to draw the power bar.")]
+    public Color powerBarColor = Color.green;
+
     [Header("Debug display")]
     [Tooltip("When enabled, overlays debug information about swing state and output.")]
     public bool showDebugInfo = true;
@@ -430,6 +446,9 @@ public class GolfSwingStateMachine : MonoBehaviour
 
     private void OnGUI()
     {
+
+        DrawPowerBar();
+
         if (!showDebugInfo)
         {
             return;
@@ -452,5 +471,44 @@ public class GolfSwingStateMachine : MonoBehaviour
         float labelHeight = style.CalcHeight(debugContent, labelWidth);
 
         GUI.Label(new Rect(debugLabelPosition.x, debugLabelPosition.y, labelWidth, labelHeight), debugContent, style);
+    }
+
+    private void DrawPowerBar()
+    {
+        if (!showPowerBar || ballRigidbody == null)
+        {
+            return;
+        }
+
+        if (shotState != ShotState.ActiveShot || swingPhase != SwingPhase.HoldingAtBottom)
+        {
+            return;
+        }
+
+        Camera mainCamera = Camera.main;
+        if (mainCamera == null)
+        {
+            return;
+        }
+
+        Vector3 screenPosition = mainCamera.WorldToScreenPoint(ballRigidbody.position);
+        if (screenPosition.z < 0f)
+        {
+            return;
+        }
+
+        float powerScale = Mathf.Clamp01(GetCurrentPowerScale());
+        float currentWidth = powerBarMaxWidth * powerScale;
+
+        float centerX = screenPosition.x;
+        float xPosition = centerX - currentWidth * 0.5f;
+        float yPosition = Screen.height - screenPosition.y + powerBarVerticalOffset;
+
+        Rect barRect = new Rect(xPosition, yPosition, currentWidth, powerBarHeight);
+
+        Color previousColor = GUI.color;
+        GUI.color = powerBarColor;
+        GUI.DrawTexture(barRect, Texture2D.whiteTexture);
+        GUI.color = previousColor;
     }
 }

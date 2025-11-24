@@ -840,7 +840,7 @@ MonoBehaviour:
   mouseFollowThroughDistance: 0.75
   mouseSwingSensitivity: 0.005
   swingForce: 50
-  maxHoldTimeForFullPower: 2
+  maxHoldTimeForFullPower: 1
   stationaryVelocityThreshold: 0.05
   stationaryTimeRequired: 0.5
   showDebugInfo: 1
