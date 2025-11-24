@@ -560,7 +560,7 @@ MonoBehaviour:
   VerticalAxis:
     Value: 17.5
     Center: 17.5
-    Range: {x: -10, y: 45}
+    Range: {x: -85, y: 85}
     Wrap: 0
     Recentering:
       Enabled: 0
@@ -839,7 +839,7 @@ MonoBehaviour:
   mouseBackswingDistance: 0.75
   mouseFollowThroughDistance: 0.75
   mouseSwingSensitivity: 0.005
-  swingForce: 10
+  swingForce: 50
   maxHoldTimeForFullPower: 2
   stationaryVelocityThreshold: 0.05
   stationaryTimeRequired: 0.5
