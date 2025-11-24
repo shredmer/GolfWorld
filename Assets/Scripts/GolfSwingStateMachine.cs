@@ -149,6 +149,7 @@ public class GolfSwingStateMachine : MonoBehaviour
         {
             shotState = ShotState.PreShot;
             stationaryTimer = 0f;
+            SetCameraControllersEnabled(true);
         }
     }
 
@@ -351,7 +352,6 @@ public class GolfSwingStateMachine : MonoBehaviour
         swingInputSource = SwingInputSource.None;
         shotState = ShotState.AfterShot;
         stationaryTimer = 0f;
-        SetCameraControllersEnabled(true);
         ResetSwingTracking();
     }
 
@@ -389,7 +389,6 @@ public class GolfSwingStateMachine : MonoBehaviour
         float powerScale = maxHoldTimeForFullPower > Mathf.Epsilon ? clampedHold / maxHoldTimeForFullPower : 1f;
 
         Vector3 direction = lockedDirection;
-        direction.y = 0f;
         if (direction.sqrMagnitude <= Mathf.Epsilon)
         {
             direction = GetCurrentAimDirection();
@@ -416,7 +415,6 @@ public class GolfSwingStateMachine : MonoBehaviour
     {
         Transform reference = swingDirectionReference == null ? transform : swingDirectionReference;
         Vector3 direction = reference.forward;
-        direction.y = 0f;
         if (direction.sqrMagnitude <= Mathf.Epsilon)
         {
             direction = Vector3.forward;
@@ -445,6 +443,10 @@ public class GolfSwingStateMachine : MonoBehaviour
         string directionText = $"Direction: {lockedDirection.normalized}";
         string ballSpeedText = $"Ball Speed: {GetBallSpeed():F2}";
 
-        GUI.Label(new Rect(debugLabelPosition.x, debugLabelPosition.y, 600f, 120f), $"{stateText}\n{powerText}\n{directionText}\n{ballSpeedText}");
+        GUIStyle style = new GUIStyle(GUI.skin.label);
+        int baseFontSize = style.fontSize <= 0 ? 14 : style.fontSize;
+        style.fontSize = Mathf.RoundToInt(baseFontSize * 3f);
+
+        GUI.Label(new Rect(debugLabelPosition.x, debugLabelPosition.y, 640f, 140f), $"{stateText}\n{powerText}\n{directionText}\n{ballSpeedText}", style);
     }
 }
