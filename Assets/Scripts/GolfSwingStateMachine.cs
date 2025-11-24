@@ -447,6 +447,10 @@ public class GolfSwingStateMachine : MonoBehaviour
         int baseFontSize = style.fontSize <= 0 ? 14 : style.fontSize;
         style.fontSize = Mathf.RoundToInt(baseFontSize * 3f);
 
-        GUI.Label(new Rect(debugLabelPosition.x, debugLabelPosition.y, 640f, 140f), $"{stateText}\n{powerText}\n{directionText}\n{ballSpeedText}", style);
+        GUIContent debugContent = new GUIContent($"{stateText}\n{powerText}\n{directionText}\n{ballSpeedText}");
+        float labelWidth = 640f;
+        float labelHeight = style.CalcHeight(debugContent, labelWidth);
+
+        GUI.Label(new Rect(debugLabelPosition.x, debugLabelPosition.y, labelWidth, labelHeight), debugContent, style);
     }
 }
