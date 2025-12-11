@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 
 public class GolfSwingStateMachine : MonoBehaviour
 {
+    [TextArea(3, 10)]
+    public string devNotes;
+
     [Header("Scene references")]
     [Tooltip("Rigid body that receives the swing force.")]
     public Rigidbody ballRigidbody;

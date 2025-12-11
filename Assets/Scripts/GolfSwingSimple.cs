@@ -9,6 +9,9 @@ public class GolfSwingSimple : MonoBehaviour
     public Transform ballTransform;
     public Rigidbody ballRigidbody;
 
+    [Tooltip("If false, the script will not move or rotate the camera. Useful when Cinemachine drives the view.")]
+    public bool controlCameraTransform = true;
+
     [Header("Look Settings")]
     public float mouseLookSensitivity = 1.5f;
     public float controllerLookSensitivity = 90f;
@@ -73,8 +76,11 @@ public class GolfSwingSimple : MonoBehaviour
             return;
         }
 
-        UpdateCameraLook();
-        UpdateZoom();
+        if (controlCameraTransform)
+        {
+            UpdateCameraLook();
+            UpdateZoom();
+        }
         UpdatePower();
         UpdateDebugInfo();
     }
@@ -86,7 +92,10 @@ public class GolfSwingSimple : MonoBehaviour
             return;
         }
 
-        UpdateCameraPosition();
+        if (controlCameraTransform)
+        {
+            UpdateCameraPosition();
+        }
         UpdateBarPosition();
     }
 
@@ -301,8 +310,8 @@ public class GolfSwingSimple : MonoBehaviour
 
         debugText.text =
             $"Ball Speed: {speed:F2} m/s\n" +
-            $"Camera Pitch: {cameraPitch:F1}�\n" +
-            $"Launch Angle: {launchAngle:F1}�";
+            $"Camera Pitch: {cameraPitch:F1}°\n" +
+            $"Launch Angle: {launchAngle:F1}°";
     }
 
     private Vector3 GetBallPosition()

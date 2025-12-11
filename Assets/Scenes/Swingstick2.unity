@@ -692,7 +692,6 @@ GameObject:
   - component: {fileID: 822277116}
   - component: {fileID: 822277120}
   - component: {fileID: 822277121}
-  - component: {fileID: 822277122}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -824,11 +823,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822277115}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc52a9219be62fe4bb94ba95d519dd74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  devNotes: 'More complex swing script. Controls
+
+    Zoom in/out - RT/LT
+
+    Hold
+    LB - Activates pre-shot
+
+    Right stick down, then up for swing
+
+    Hold right
+    stick down longer for more power
+
+
+    Camera angle determines launch angle'
   ballRigidbody: {fileID: 822277120}
   swingDirectionReference: {fileID: 668913039}
   cameraControllersToDisable:
@@ -851,36 +864,6 @@ MonoBehaviour:
   powerBarColor: {r: 0, g: 1, b: 0, a: 1}
   showDebugInfo: 1
   debugLabelPosition: {x: 10, y: 10}
---- !u!114 &822277122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822277115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca17843faaa25a4ca07f31164bbbc4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 330585545}
-  ballTransform: {fileID: 822277119}
-  ballRigidbody: {fileID: 822277120}
-  mouseLookSensitivity: 1.5
-  controllerLookSensitivity: 90
-  minPitch: -80
-  maxPitch: 80
-  zoomSpeed: 4
-  minDistance: 2
-  maxDistance: 12
-  cameraHeightOffset: 0.5
-  maxChargeTime: 2
-  maxForce: 25
-  barWidth: 1.6
-  barHeight: 0.15
-  barVerticalOffset: 0.35
-  barBackgroundColor: {r: 0, g: 0, b: 0, a: 0.35}
-  barFillColor: {r: 0.26, g: 0.82, b: 0.37, a: 0.9}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
