@@ -153,7 +153,7 @@ public class SwingMechanic : MonoBehaviour
         }
 
         Vector3 rightAxis = Vector3.Cross(Vector3.up, flatForward).normalized;
-        Vector3 launchDirection = Quaternion.AngleAxis(currentLaunchAngle, rightAxis) * flatForward.normalized;
+        Vector3 launchDirection = Quaternion.AngleAxis(-currentLaunchAngle, rightAxis) * flatForward.normalized;
         if (launchDirection.sqrMagnitude <= Mathf.Epsilon)
         {
             return;
