@@ -691,6 +691,7 @@ GameObject:
   - component: {fileID: 822277117}
   - component: {fileID: 822277116}
   - component: {fileID: 822277120}
+  - component: {fileID: 822277121}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -815,6 +816,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &822277121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822277115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7d587a1f5039b46a366ed61d7a4464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRigidbody: {fileID: 822277120}
+  targetCamera: {fileID: 330585545}
+  powerBuildRate: 12
+  maxPower: 25
+  minimumHoldTime: 0.5
+  forceMode: 1
+  debugTextPosition: {x: 16, y: 16}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
