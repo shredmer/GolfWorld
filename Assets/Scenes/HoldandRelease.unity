@@ -825,11 +825,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 822277115}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e7d587a1f5039b46a366ed61d7a4464, type: 3}
+  m_Script: {fileID: 11500000, guid: 5321bc9f572e10840a0d9ce04f417cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetRigidbody: {fileID: 822277120}
   targetCamera: {fileID: 330585545}
+  defaultLaunchAngle: 15
+  minLaunchAngle: 0
+  maxLaunchAngle: 60
+  stickAngleSpeed: 45
+  mouseAngleSpeed: 0.25
   powerBuildRate: 12
   maxPower: 25
   minimumHoldTime: 0.5
