@@ -508,7 +508,7 @@
                 {
                     "name": "up",
                     "id": "abbc699e-8ff4-4331-ad05-01a1b1b2e19c",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -519,7 +519,7 @@
                 {
                     "name": "down",
                     "id": "5854e561-46b7-462f-9d88-dab7f7b69fbf",
-                    "path": "<Gamepad>/leftTrigger",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
