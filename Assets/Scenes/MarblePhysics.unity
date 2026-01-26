@@ -907,6 +907,7 @@ GameObject:
   - component: {fileID: 822277117}
   - component: {fileID: 822277116}
   - component: {fileID: 822277120}
+  - component: {fileID: 822277121}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -1031,6 +1032,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &822277121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822277115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7669a9f607afb7b47b7dabb8a4dfb57d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 330585546}
+  maxSpeed: 25
+  groundAcceleration: 10
+  airAcceleration: 15
+  groundFriction: 1
+  torqueStrength: 45
+  jumpImpulse: 6.5
+  coyoteTime: 0.12
+  jumpBuffer: 0.12
+  groundCheckRadius: 0.45
+  groundCheckDistance: 0.15
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
