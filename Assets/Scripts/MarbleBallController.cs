@@ -21,7 +21,7 @@ public class MarbleBallController : MonoBehaviour
     [SerializeField] private float jumpBuffer = 0.12f;
 
     [Header("Bounce")]
-    [SerializeField, Range(0f, 1f)] private float bounciness = 0.55f;
+    [SerializeField, Range(0f, 1f)] private float bounciness = 0.20f;
     [SerializeField] private PhysicsMaterialCombine bounceCombine = PhysicsMaterialCombine.Maximum;
 
     [Header("Airborne Weight")]
