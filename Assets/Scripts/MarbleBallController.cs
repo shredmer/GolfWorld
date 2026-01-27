@@ -20,6 +20,9 @@ public class MarbleBallController : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.12f;
     [SerializeField] private float jumpBuffer = 0.12f;
 
+    [Header("Airborne Weight")]
+    [SerializeField] private float extraAirGravity = 18f;
+
     [Header("Grounding")]
     [SerializeField] private float groundCheckRadius = 0.45f;
     [SerializeField] private float groundCheckDistance = 0.15f;
@@ -54,6 +57,7 @@ public class MarbleBallController : MonoBehaviour
         }
 
         ApplyMovement(grounded);
+        ApplyAirGravity(grounded);
         HandleJump(grounded);
     }
 
@@ -141,6 +145,16 @@ public class MarbleBallController : MonoBehaviour
         Vector3 horizontalVelocity = Vector3.ProjectOnPlane(rb.linearVelocity, Vector3.up);
         Vector3 frictionForce = -horizontalVelocity * groundFriction;
         rb.AddForce(frictionForce, ForceMode.Acceleration);
+    }
+
+    private void ApplyAirGravity(bool grounded)
+    {
+        if (grounded)
+        {
+            return;
+        }
+
+        rb.AddForce(Vector3.down * extraAirGravity, ForceMode.Acceleration);
     }
 
     private void HandleJump(bool grounded)

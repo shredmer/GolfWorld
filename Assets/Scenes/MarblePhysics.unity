@@ -1051,9 +1051,10 @@ MonoBehaviour:
   groundFriction: 1
   torqueStrength: 45
   interpolationMode: 1
-  jumpImpulse: 6.5
+  jumpImpulse: 13
   coyoteTime: 0.12
   jumpBuffer: 0.12
+  extraAirGravity: 18
   groundCheckRadius: 0.45
   groundCheckDistance: 0.15
   groundLayers:
