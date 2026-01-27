@@ -32,10 +32,16 @@ public class MarbleBallController : MonoBehaviour
     [SerializeField] private float groundCheckDistance = 0.15f;
     [SerializeField] private LayerMask groundLayers = ~0;
 
+    [Header("Debug")]
+    [SerializeField] private bool showDebug = true;
+
     private Rigidbody rb;
     private Vector2 moveInput;
     private float lastGroundedTime = -999f;
     private float lastJumpPressedTime = -999f;
+    private bool isGrounded;
+    private float heightOffGround;
+    private float ballSpeed;
 
     private void Awake()
     {
@@ -76,15 +82,16 @@ public class MarbleBallController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        bool grounded = CheckGrounded();
-        if (grounded)
+        isGrounded = CheckGrounded();
+        if (isGrounded)
         {
             lastGroundedTime = Time.time;
         }
 
-        ApplyMovement(grounded);
-        ApplyAirGravity(grounded);
-        HandleJump(grounded);
+        ApplyMovement(isGrounded);
+        ApplyAirGravity(isGrounded);
+        HandleJump(isGrounded);
+        UpdateDebugMetrics();
     }
 
     private void ReadInput()
@@ -212,5 +219,40 @@ public class MarbleBallController : MonoBehaviour
 
         return Physics.SphereCast(origin, radius, Vector3.down, out _, distance, groundLayers,
             QueryTriggerInteraction.Ignore);
+    }
+
+	private void UpdateDebugMetrics()
+    {
+        ballSpeed = rb.linearVelocity.magnitude;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, Mathf.Infinity, groundLayers,
+            QueryTriggerInteraction.Ignore))
+        {
+            heightOffGround = hit.distance;
+        }
+        else
+        {
+            heightOffGround = Mathf.Infinity;
+        }
+    }
+
+    private void OnGUI()
+    {
+        if (!showDebug)
+        {
+            return;
+        }
+
+        GUIStyle style = new GUIStyle(GUI.skin.label)
+        {
+            fontSize = 16,
+            normal = { textColor = Color.white }
+        };
+
+        string heightText = float.IsInfinity(heightOffGround) ? "N/A" : $"{heightOffGround:0.00} m";
+        string debugText =
+            $"Speed: {ballSpeed:0.00} m/s\nHeight: {heightText}\nGrounded: {isGrounded}";
+
+        GUI.Label(new Rect(12f, 12f, 320f, 80f), debugText, style);
     }
 }
