@@ -13,6 +13,7 @@ public class MarbleBallController : MonoBehaviour
     [SerializeField] private float airAcceleration = 15f;
     [SerializeField] private float groundFriction = 6f;
     [SerializeField] private float torqueStrength = 45f;
+    [SerializeField] private RigidbodyInterpolation interpolationMode = RigidbodyInterpolation.Interpolate;
 
     [Header("Jump")]
     [SerializeField] private float jumpImpulse = 6.5f;
@@ -32,6 +33,7 @@ public class MarbleBallController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        rb.interpolation = interpolationMode;
         if (cameraTransform == null && Camera.main != null)
         {
             cameraTransform = Camera.main.transform;

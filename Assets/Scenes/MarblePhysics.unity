@@ -959,7 +959,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f4bbce7247090b04085769aa33d2121b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1050,6 +1050,7 @@ MonoBehaviour:
   airAcceleration: 15
   groundFriction: 1
   torqueStrength: 45
+  interpolationMode: 1
   jumpImpulse: 6.5
   coyoteTime: 0.12
   jumpBuffer: 0.12
