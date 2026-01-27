@@ -20,6 +20,10 @@ public class MarbleBallController : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.12f;
     [SerializeField] private float jumpBuffer = 0.12f;
 
+    [Header("Bounce")]
+    [SerializeField, Range(0f, 1f)] private float bounciness = 0.55f;
+    [SerializeField] private PhysicsMaterialCombine bounceCombine = PhysicsMaterialCombine.Maximum;
+
     [Header("Airborne Weight")]
     [SerializeField] private float extraAirGravity = 18f;
 
@@ -41,6 +45,28 @@ public class MarbleBallController : MonoBehaviour
         {
             cameraTransform = Camera.main.transform;
         }
+
+        ApplyBounceMaterial();
+    }
+
+    private void ApplyBounceMaterial()
+    {
+        Collider ballCollider = GetComponent<Collider>();
+        if (ballCollider == null)
+        {
+            return;
+        }
+
+        PhysicsMaterial bounceMaterial = new PhysicsMaterial("BallBounce")
+        {
+            bounciness = bounciness,
+            bounceCombine = bounceCombine,
+            dynamicFriction = 0f,
+            staticFriction = 0f,
+            frictionCombine = PhysicsMaterialCombine.Minimum
+        };
+
+        ballCollider.material = bounceMaterial;
     }
 
     private void Update()
