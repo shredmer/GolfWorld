@@ -5,36 +5,55 @@ using UnityEngine.InputSystem;
 public class MarbleBallController : MonoBehaviour
 {
     [Header("References")]
+    [Tooltip("Camera used to align movement with the view direction.")]
     [SerializeField] private Transform cameraTransform;
 
     [Header("Movement")]
+    [Tooltip("Top horizontal speed the ball can reach.")]
     [SerializeField] private float maxSpeed = 12f;
+    [Tooltip("Acceleration applied while grounded.")]
     [SerializeField] private float groundAcceleration = 35f;
+    [Tooltip("Acceleration applied while airborne.")]
     [SerializeField] private float airAcceleration = 15f;
+    [Tooltip("How quickly the ball slows down when grounded.")]
     [SerializeField] private float groundFriction = 6f;
+    [Tooltip("How much rotational force is applied to roll the ball.")]
     [SerializeField] private float torqueStrength = 45f;
+    [Tooltip("Speed below this value triggers extra stop damping.")]
     [SerializeField] private float stopSpeedThreshold = 0.05f;
+    [Tooltip("How quickly the ball's spin is damped when nearly stopped.")]
     [SerializeField] private float stopAngularDamping = 12f;
+    [Tooltip("Interpolation mode used for smoother motion.")]
     [SerializeField] private RigidbodyInterpolation interpolationMode = RigidbodyInterpolation.Interpolate;
 
     [Header("Jump")]
+    [Tooltip("Instant upward force applied when jumping.")]
     [SerializeField] private float jumpImpulse = 6.5f;
+    [Tooltip("Grace time after leaving the ground where a jump still works.")]
     [SerializeField] private float coyoteTime = 0.12f;
+    [Tooltip("Time window to buffer a jump press before landing.")]
     [SerializeField] private float jumpBuffer = 0.12f;
 
     [Header("Bounce")]
+    [Tooltip("How bouncy the ball's physics material is.")]
     [SerializeField, Range(0f, 1f)] private float bounciness = 0.20f;
+    [Tooltip("How bounciness combines with other materials.")]
     [SerializeField] private PhysicsMaterialCombine bounceCombine = PhysicsMaterialCombine.Maximum;
 
     [Header("Airborne Weight")]
+    [Tooltip("Extra downward force while airborne.")]
     [SerializeField] private float extraAirGravity = 18f;
 
     [Header("Grounding")]
+    [Tooltip("Radius of the sphere used to check for ground contact.")]
     [SerializeField] private float groundCheckRadius = 0.45f;
+    [Tooltip("How far below the ball to check for ground contact.")]
     [SerializeField] private float groundCheckDistance = 0.15f;
+    [Tooltip("Which layers count as ground.")]
     [SerializeField] private LayerMask groundLayers = ~0;
 
     [Header("Debug")]
+    [Tooltip("Show debug readouts on screen.")]
     [SerializeField] private bool showDebug = true;
 
     private Rigidbody rb;
