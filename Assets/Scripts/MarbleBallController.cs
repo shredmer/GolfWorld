@@ -44,6 +44,8 @@ public class MarbleBallController : MonoBehaviour
     private float lastJumpPressedTime = -999f;
     private bool jumpHeld;
     private bool isGrounded;
+    private bool wasGrounded;
+    private bool landedThisFrame;
     private float heightOffGround;
     private float ballSpeed;
 
@@ -91,12 +93,14 @@ public class MarbleBallController : MonoBehaviour
         {
             lastGroundedTime = Time.time;
         }
+        landedThisFrame = isGrounded && !wasGrounded;
 
         ApplyMovement(isGrounded);
         ApplyAirGravity(isGrounded);
         HandleJump(isGrounded);
         ApplyAngularDamping(isGrounded);
         UpdateDebugMetrics();
+        wasGrounded = isGrounded;
     }
 
     private void ReadInput()
@@ -225,8 +229,9 @@ public class MarbleBallController : MonoBehaviour
     {
         bool canUseCoyote = Time.time - lastGroundedTime <= coyoteTime;
         bool hasBufferedJump = Time.time - lastJumpPressedTime <= jumpBuffer;
+        bool shouldJump = (hasBufferedJump && canUseCoyote) || (jumpHeld && landedThisFrame);
 
-        if ((!hasBufferedJump && !jumpHeld) || !canUseCoyote)
+        if (!shouldJump)
         {
             return;
         }
