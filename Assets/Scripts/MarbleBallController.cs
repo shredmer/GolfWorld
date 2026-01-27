@@ -13,6 +13,8 @@ public class MarbleBallController : MonoBehaviour
     [SerializeField] private float airAcceleration = 15f;
     [SerializeField] private float groundFriction = 6f;
     [SerializeField] private float torqueStrength = 45f;
+    [SerializeField] private float stopSpeedThreshold = 0.05f;
+    [SerializeField] private float stopAngularDamping = 12f;
     [SerializeField] private RigidbodyInterpolation interpolationMode = RigidbodyInterpolation.Interpolate;
 
     [Header("Jump")]
@@ -92,6 +94,7 @@ public class MarbleBallController : MonoBehaviour
         ApplyMovement(isGrounded);
         ApplyAirGravity(isGrounded);
         HandleJump(isGrounded);
+        ApplyAngularDamping(isGrounded);
         UpdateDebugMetrics();
     }
 
@@ -189,6 +192,26 @@ public class MarbleBallController : MonoBehaviour
         }
 
         rb.AddForce(Vector3.down * extraAirGravity, ForceMode.Acceleration);
+    }
+
+    private void ApplyAngularDamping(bool grounded)
+    {
+        if (!grounded)
+        {
+            return;
+        }
+
+        if (rb.linearVelocity.sqrMagnitude > stopSpeedThreshold * stopSpeedThreshold)
+        {
+            return;
+        }
+
+        Vector3 angularVelocity = rb.angularVelocity;
+        if (angularVelocity.sqrMagnitude > 0.0001f)
+        {
+            float damping = 1f - Mathf.Clamp01(stopAngularDamping * Time.fixedDeltaTime);
+            rb.angularVelocity = angularVelocity * damping;
+        }
     }
 
     private void HandleJump(bool grounded)

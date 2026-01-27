@@ -1409,6 +1409,8 @@ MonoBehaviour:
   airAcceleration: 15
   groundFriction: 1
   torqueStrength: 45
+  stopSpeedThreshold: 5
+  stopAngularDamping: 1
   interpolationMode: 1
   jumpImpulse: 13
   coyoteTime: 0.12
