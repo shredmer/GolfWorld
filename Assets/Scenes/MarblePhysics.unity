@@ -1407,10 +1407,10 @@ MonoBehaviour:
   maxSpeed: 25
   groundAcceleration: 10
   airAcceleration: 15
-  groundFriction: 1
+  groundFriction: 2
   torqueStrength: 45
   stopSpeedThreshold: 5
-  stopAngularDamping: 1
+  stopAngularDamping: 2
   interpolationMode: 1
   jumpImpulse: 13
   coyoteTime: 0.12

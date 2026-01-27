@@ -42,6 +42,7 @@ public class MarbleBallController : MonoBehaviour
     private Vector2 moveInput;
     private float lastGroundedTime = -999f;
     private float lastJumpPressedTime = -999f;
+    private bool jumpHeld;
     private bool isGrounded;
     private float heightOffGround;
     private float ballSpeed;
@@ -101,10 +102,12 @@ public class MarbleBallController : MonoBehaviour
     private void ReadInput()
     {
         moveInput = Vector2.zero;
+        jumpHeld = false;
 
         if (Gamepad.current != null)
         {
             moveInput = Gamepad.current.leftStick.ReadValue();
+            jumpHeld = Gamepad.current.buttonSouth.isPressed;
             if (Gamepad.current.buttonSouth.wasPressedThisFrame)
             {
                 lastJumpPressedTime = Time.time;
@@ -139,6 +142,10 @@ public class MarbleBallController : MonoBehaviour
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 lastJumpPressedTime = Time.time;
+            }
+            if (Keyboard.current.spaceKey.isPressed)
+            {
+                jumpHeld = true;
             }
         }
     }
@@ -219,7 +226,7 @@ public class MarbleBallController : MonoBehaviour
         bool canUseCoyote = Time.time - lastGroundedTime <= coyoteTime;
         bool hasBufferedJump = Time.time - lastJumpPressedTime <= jumpBuffer;
 
-        if (!hasBufferedJump || !canUseCoyote)
+        if ((!hasBufferedJump && !jumpHeld) || !canUseCoyote)
         {
             return;
         }
