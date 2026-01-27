@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 265332938}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7, y: -0.26, z: -39.8}
+  m_LocalPosition: {x: 62.3, y: -0.26, z: -39.8}
   m_LocalScale: {x: 48.7835, y: 1, z: 42.106636}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1054,12 +1054,15 @@ MonoBehaviour:
   jumpImpulse: 13
   coyoteTime: 0.12
   jumpBuffer: 0.12
+  bounciness: 0.55
+  bounceCombine: 3
   extraAirGravity: 18
   groundCheckRadius: 0.45
   groundCheckDistance: 0.15
   groundLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+  showDebug: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,7 +1547,7 @@ Transform:
   m_GameObject: {fileID: 1790730976}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7, y: -0.26, z: -34.2}
+  m_LocalPosition: {x: 49.2, y: -0.26, z: -34.2}
   m_LocalScale: {x: 25.776823, y: 0.5, z: 110.63265}
   m_ConstrainProportionsScale: 0
   m_Children: []
