@@ -36,6 +36,7 @@ public class MarbleBallController : MonoBehaviour
     [SerializeField] private bool showDebug = true;
 
     private Rigidbody rb;
+    private Collider ballCollider; 
     private Vector2 moveInput;
     private float lastGroundedTime = -999f;
     private float lastJumpPressedTime = -999f;
@@ -46,6 +47,7 @@ public class MarbleBallController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        ballCollider = GetComponent<Collider>(); //Cached the ball collider to reuse it for bounce setup and grounding calculations, reducing redundant lookups
         rb.interpolation = interpolationMode;
         if (cameraTransform == null && Camera.main != null)
         {
@@ -57,7 +59,6 @@ public class MarbleBallController : MonoBehaviour
 
     private void ApplyBounceMaterial()
     {
-        Collider ballCollider = GetComponent<Collider>();
         if (ballCollider == null)
         {
             return;
@@ -216,6 +217,15 @@ public class MarbleBallController : MonoBehaviour
         Vector3 origin = transform.position + Vector3.up * 0.1f;
         float radius = Mathf.Max(groundCheckRadius, 0.05f);
         float distance = Mathf.Max(groundCheckDistance, 0.01f);
+
+        if (ballCollider != null)
+        {
+            Bounds bounds = ballCollider.bounds;
+            float maxProbeRadius = Mathf.Min(bounds.extents.x, bounds.extents.z);
+            radius = Mathf.Clamp(radius, 0.05f, maxProbeRadius);
+            distance = Mathf.Max(distance + bounds.extents.y - radius, 0.01f);
+            origin = bounds.center;
+        }
 
         return Physics.SphereCast(origin, radius, Vector3.down, out _, distance, groundLayers,
             QueryTriggerInteraction.Ignore);
