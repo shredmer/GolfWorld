@@ -6525,8 +6525,8 @@ MonoBehaviour:
   stopAngularDamping: 2
   interpolationMode: 1
   jumpImpulse: 11
-  coyoteTime: 0.12
-  jumpBuffer: 0.12
+  coyoteTime: 0.08
+  jumpBuffer: 0.08
   bounciness: 0.2
   bounceCombine: 3
   extraAirGravity: 18

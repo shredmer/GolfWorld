@@ -248,7 +248,8 @@ public class MarbleBallController : MonoBehaviour
     {
         bool canUseCoyote = Time.time - lastGroundedTime <= coyoteTime;
         bool hasBufferedJump = Time.time - lastJumpPressedTime <= jumpBuffer;
-        bool shouldJump = (hasBufferedJump && canUseCoyote) || (jumpHeld && landedThisFrame);
+        bool canAutoJumpOnLanding = jumpHeld && landedThisFrame && rb.linearVelocity.y <= 0.1f;
+        bool shouldJump = (hasBufferedJump && canUseCoyote) || canAutoJumpOnLanding;
 
         if (!shouldJump)
         {
@@ -263,6 +264,7 @@ public class MarbleBallController : MonoBehaviour
         }
 
         rb.AddForce(Vector3.up * jumpImpulse, ForceMode.VelocityChange);
+        lastGroundedTime = -999f;
         lastJumpPressedTime = -999f;
     }
 
