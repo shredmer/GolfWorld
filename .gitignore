@@ -97,3 +97,77 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Gray_SampleSceneProfile.asset.meta
+Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Dark_SampleSceneProfile.asset.meta
+Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Blue_SampleSceneProfile.asset.meta
+Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Gray_SampleSceneProfile.asset
+Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Dark_SampleSceneProfile.asset
+Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles/Blue_SampleSceneProfile.asset
+Assets/Scalable Grid Prototype Materials/Materials/Ground/DarkGray_Ground_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Textures/1x1_grid_quarter_lines_numbered.png.meta
+Assets/Scalable Grid Prototype Materials/ShaderGraphs/ScaleTilingShader.shadergraph.meta
+Assets/Scalable Grid Prototype Materials/Materials/Ground/Gray_Ground_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Ground/Blue_Ground_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Ground/DarkGray_Ground_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Demo Scene/Material Demo Scene HDRP.unity.meta
+Assets/Scalable Grid Prototype Materials/Textures/1x1_grid_quarter_lines_numbered.png
+Assets/Scalable Grid Prototype Materials/Materials/Light_Sea_Green_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Template Scenes/Gray_SampleScene.unity.meta
+Assets/Scalable Grid Prototype Materials/Template Scenes/Dark_SampleScene.unity.meta
+Assets/Scalable Grid Prototype Materials/Template Scenes/Blue_SampleScene.unity.meta
+Assets/Scalable Grid Prototype Materials/ShaderGraphs/ScaleTilingShader.shadergraph
+Assets/Scalable Grid Prototype Materials/Materials/Ground/Gray_Ground_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Ground/Blue_Ground_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Blue_Sapphire_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Demo Scene/Material Demo Scene.unity.meta
+Assets/Scalable Grid Prototype Materials/Demo Scene/Material Demo Scene HDRP.unity
+Assets/Scalable Grid Prototype Materials/Textures/1x1_grid_quarter_lines.png.meta
+Assets/Scalable Grid Prototype Materials/Materials/Light_Sea_Green_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Light_Gray_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Template Scenes/Gray_SampleScene.unity
+Assets/Scalable Grid Prototype Materials/Template Scenes/Dark_SampleScene.unity
+Assets/Scalable Grid Prototype Materials/Template Scenes/Blue_SampleScene.unity
+Assets/Scalable Grid Prototype Materials/Materials/Dark_Gray_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Dark_Blue_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Blue_Sapphire_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Demo Scene/Material Demo Scene.unity
+Assets/Scalable Grid Prototype Materials/Textures/1x1_grid_quarter_lines.png
+Assets/Scalable Grid Prototype Materials/Textures/1x1_grid_numbered.png.meta
+Assets/Scalable Grid Prototype Materials/Template Scenes/VolumeProfiles.meta
+Assets/Scalable Grid Prototype Materials/Materials/Yellow_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Violet_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Orange_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Mantis_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Textures/prototype_normal.png.meta
+Assets/Scalable Grid Prototype Materials/Textures/1x1_checkerboard.png.meta
+Assets/Scalable Grid Prototype Materials/Materials/White_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Light_Gray_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Green_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Black_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Gray_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Dark_Gray_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Dark_Blue_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Blue_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Materials/Red_Prototype.mat.meta
+Assets/Scalable Grid Prototype Materials/Textures/1x1_grid_numbered.png
+Assets/Scalable Grid Prototype Materials/Materials/Yellow_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Violet_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Orange_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Mantis_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Textures/prototype_normal.png
+Assets/Scalable Grid Prototype Materials/Textures/1x1_checkerboard.png
+Assets/Scalable Grid Prototype Materials/Materials/White_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Green_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Black_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Gray_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Blue_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Materials/Red_Prototype.mat
+Assets/Scalable Grid Prototype Materials/Textures/1x1_grid.png.meta
+Assets/Scalable Grid Prototype Materials/Textures/1x1_grid.png
+Assets/Scalable Grid Prototype Materials/Materials/Ground.meta
+Assets/Scalable Grid Prototype Materials/Template Scenes.meta
+Assets/Scalable Grid Prototype Materials/ShaderGraphs.meta
+Assets/Scalable Grid Prototype Materials/Demo Scene.meta
+Assets/Scalable Grid Prototype Materials/Materials.meta
+Assets/Scalable Grid Prototype Materials/Textures.meta
+Assets/Scalable Grid Prototype Materials.meta
