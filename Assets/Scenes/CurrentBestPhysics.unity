@@ -6522,7 +6522,7 @@ MonoBehaviour:
   groundFriction: 2
   torqueStrength: 45
   stopSpeedThreshold: 5
-  stopAngularDamping: 2
+  stopAngularDamping: 4
   interpolationMode: 1
   jumpImpulse: 11
   coyoteTime: 0.08
